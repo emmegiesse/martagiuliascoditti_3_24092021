@@ -1,0 +1,28 @@
+$primary : #aabbcc;
+$secondary : pink;
+$tertiary :blue;
+body 
+{
+    background-color: lighten($primary,5%);
+    background-color: darken($primary,25%);
+}
+.buton1
+{
+    background-color: $tertiary;
+    background-image: linear-gradient($primary, $secondary);
+    width: 200px;
+    height: 200px;
+}
+.texte1 
+{
+    background-color: $secondary;
+    .buton1
+    {
+        background-color:$primary;
+        &:hover {
+            background-color: lighten($primary,5%);
+            background-image: linear-gradient(lighten($primary,5%), lighten($secondary,5%));
+        }
+    }  
+}
+
