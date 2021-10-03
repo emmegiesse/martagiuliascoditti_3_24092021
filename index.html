@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-    
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style/style_homepage.css">
         <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet">
         <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet">
         <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
@@ -23,15 +23,13 @@
 <!--En tete-->
 
        <header class="HomepageHeader flex">
-           <h1 class="HeaderLogo"ohmyfood></h1>
            <img src="images/logo/ohmyfood@2x.svg" alt="Logo ohmyfood">
        </header>
 
 <!--Ligne de localisation-->
 
-       <div class="Localisation flex">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>Paris, Belleville</p>
+       <div class="Location flex">
+            <p><i class="fas fa-map-marker-alt"></i>Paris, Belleville</p>
        </div>
 
 <!--Bloc de présentation du site-->
@@ -39,7 +37,7 @@
         <div class="About">
             <h2>Réservez le menu qui vous convient</h2>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <a href="#restaurants_anchor" class="btn btn--explore">Explorer nos restaurants</a>
+            <a href="#restaurants_anchor" class="btn Explore">Explorer nos restaurants</a>
         </div>
 
  <!--Bloc du fonctionnement du site-->
@@ -49,22 +47,24 @@
             <div class="HowToList">
 
                 <div class="HowToStep flex">
-                    <div class="Step# flex"><span>1</span></div>
+                    <div class="StepNumber flex"><span>1</span></div>
                     <div class="StepText flex"><i class="fas fa-mobile-alt"></i><p>Choisissez un restaurant</p></div>
                 </div>
     
                 <div class="HowToStep flex">
-                    <div class="Step# flex"><span>2</span></div>
+                    <div class="StepNumber flex"><span>2</span></div>
                     <div class="StepText flex"><i class="fas fa-list-ul"></i><p>Composez votre menu</p></div>
                 </div>
     
                 <div class="HowToStep flex">
-                    <div class="Step# flex"><span>3</span></div>
+                    <div class="StepNumber flex"><span>3</span></div>
                     <div class="StepText flex"><i class="fas fa-store"></i><p>Dégustez au restaurant</p></div>
                 </div>
 
             </div>
-        </section>
+        </section> 
+
+
 
 <!--Bloc choix des restaurants-->
 
@@ -73,7 +73,7 @@
 
             <div class="RestaurantsBox">
 
-                <div class="Restaurant#">
+                <div class="RestaurantCard">
                     <a href="RestaurantsPages/la_palette_du_gout.html">
                         <div class="RestaurantPic la_palette_du_gout">
                             <div class="New">Nouveau</div>
@@ -90,9 +90,9 @@
                     </a>
                 </div>
 
-                <div class="Restaurant#">
+                <div class="RestaurantCard">
                     <a href="RestaurantsPages/la_note_enchantee.html">
-                        <div class="RestaurantPic la_note_enchantee">
+                        <div class="RestaurantPicEX la_note_enchantee">
                             <div class="New">Nouveau</div>
                         </div>
                         <div class="RestaurantDetails flex">
@@ -107,7 +107,7 @@
                     </a>
                 </div>
 
-                <div class="Restaurant#">
+                <div class="RestaurantCard">
                     <a href="RestaurantsPages/a_la_francaise.html">
                         <div class="RestaurantPic a_la_francaise"></div>
                         <div class="RestaurantDetails flex">
@@ -122,7 +122,7 @@
                     </a>
                 </div>
 
-                <div class="RestaurantBox">
+                <div class="RestaurantCard">
                     <a href="RestaurantsPages/le_delice_des_sens.html">
                         <div class="RestaurantPic le_delice_des_sens"></div>
                         <div class="RestaurantDetails flex">
