@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/style_page.css">
+        <link rel="stylesheet" href="../style/style_page.css">
+        <link rel="stylesheet" href="../style/style_transitions1.css">
 
         <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet">
         <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet">
@@ -16,148 +17,150 @@
 
 <!--En tete-->
     
-    <header class="HeaderPage flex">
-        <a ref="index.html" class="flex"><i class="fas fa-arrow-left"></i></a>
-        <h1>ohmyfood</h1>
+    <header class="PageHeader">
+        <a ref="index.html"><i class="fas fa-arrow-left"></i></a>
+        <img src="../style/images/logo/ohmyfood@2x.svg" alt="Logo ohmyfood">
     </header>
 
-    <!-- Menu du restaurant -->
-        <div class="main">
-            <div class="RestaurantPic_page"></div>
-                <section class="Restaurant">
-                    <div class="RestaurantName flex">
-                        <h2>La note enchantée</h2>
-                        <i class="far fa-heart emptyHeart"><i class="fas fa-heart fullHeart"></i></i>
-                    </div>
+<!-- Introduction du restaurant -->
+    <div class="PageRestaurantCard"> <!-- class=main -->
+        <div class="PageRestaurantPic la_note_enchantee"></div>
+        <div class="RestaurantName flex">
+            <h2>La note enchantée</h2>
+            <i class="far fa-heart emptyHeart"><i class="fas fa-heart fullHeart"></i></i>
+        </div>
+    </div>
 
-        <!-- Section Entrées -->
-                    <section class="Menu">
-                        <h3>Entrées</h3>
+<!-- Section Menu -->
+    <section class="Menu">
 
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Ravioles de foie gras</p>
-                                <p>Accompagnés de leur crème à la truffe</p>
-                            </div>
-                            <div class="DishPrice">25€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
+    <!-- Section Entrées -->
+        <section class="StartersMenu">
+            <h3>Entrées</h3>
 
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Caviar osciètre</p>
-                                <p>Sur blini à la farine de blé noir</p>
-                            </div>
-                            <div class="DishPrice">35€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Homard et espuma de potiron</p>
-                                <p>Mariné aux zestes d'orange</p>
-                            </div>
-                            <div class="DishPrice">20€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Foie gras de canard cuit entier</p>
-                                <p>Confiture de figue et pain toasté</p>
-                            </div>
-                            <div class="DishPrice">35€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Section Plats -->
-                    <section class="Menu">
-                        <h3>Plats</h3>
-
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Noix de coquilles Saint-Jacques</p>
-                                <p>Sur lit de purée de céleri-rave</p>
-                            </div>
-                            <div class="DishPrice">40€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Langoustine poêlée</p>
-                                <p>Purée de patate douce</p>
-                            </div>
-                            <div class="DishPrice">35€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Mijoté de queue de boeuf</p>
-                                <p>Et riz sauvage aux zestes de citron</p>
-                            </div>
-                            <div class="DishPrice">44€</div>
-                                <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-                    </section> 
-
-                    <!-- Section Desserts -->
-                    <section class="Menu">
-                        <h3>Desserts</h3>
-
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Macaron noisette et chocolat</p>
-                                <p>Glace au caramel brun et sel de Guérande</p>
-                            </div>
-                            <div class="DishPrice">18€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Baba au rhum revisité</p>
-                                <p>Avec son coulis de citron</p>
-                            </div>
-                            <div class="DishPrice">22€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-
-                        <div class="Dishes">
-                            <div class="DishesText">
-                                <p class="DishName">Tarte au citron meringuée</p>
-                                <p>Déstructurée</p>
-                            </div>
-                            <div class="DishPrice">23€</div>
-                            <div class="check__animation">
-                                <div class="anim_icon"><i class="fas fa-check-circle"></i></div>
-                            </div>
-                        </div>
-                    </section> 
-
-                    <button class="btn">Commander</button>
-                </section>
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Ravioles de foie gras</p>
+                    <p>Accompagnés de leur crème à la truffe</p>
+                </div>
+                <div class="DishPrice">25€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
             </div>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Caviar osciètre</p>
+                    <p>Sur blini à la farine de blé noir</p>
+                </div>
+                <div class="DishPrice">35€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Homard et espuma de potiron</p>
+                    <p>Mariné aux zestes d'orange</p>
+                </div>
+                <div class="DishPrice">20€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Foie gras de canard cuit entier</p>
+                    <p>Confiture de figue et pain toasté</p>
+                </div>
+                <div class="DishPrice">35€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Section Plats -->
+        <section class="MainsMenu">
+            <h3>Plats</h3>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Noix de coquilles Saint-Jacques</p>
+                    <p>Sur lit de purée de céleri-rave</p>
+                </div>
+                <div class="DishPrice">40€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Langoustine poêlée</p>
+                    <p>Purée de patate douce</p>
+                </div>
+                <div class="DishPrice">35€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Mijoté de queue de boeuf</p>
+                    <p>Et riz sauvage aux zestes de citron</p>
+                </div>
+                <div class="DishPrice">44€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Section Desserts -->
+        <section class="DessertsMenu">
+            <h3>Desserts</h3>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Macaron noisette et chocolat</p>
+                    <p>Glace au caramel brun et sel de Guérande</p>
+                </div>
+                <div class="DishPrice">18€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Baba au rhum revisité </p>
+                    <p>Avec son coulis de citron</p>
+                </div>
+                <div class="DishPrice">22€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+
+            <div class="DishOptions">
+                <div class="DishText">
+                    <p class="DishName">Tarte au citron meringuée</p>
+                    <p>Déstructurée</p>
+                </div>
+                <div class="DishPrice">23€</div>
+                <div class="Check">
+                    <div class="CheckIcon"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <button class="btn">Commander</button>
+    </section>
 
     <!-- Pied de page -->
         <footer>
