@@ -1,0 +1,311 @@
+/*--Déclaration des variables--*/
+$primary-color:#9356DC;
+$secondary-color:#FF79DA;
+$tertiary-color:#99E2D0;
+$lightgrey-color:darken(whitesmoke, 2%);
+$darkgrey-color: darken(grey, 25%);
+$white:#fff;
+
+$images-resto:(
+    la_palette_du_gout: 'images/Restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg',
+    la_note_enchantee: 'images/Restaurants/stil-u2Lp8tXIcjw-unsplash.jpg',
+    a_la_francaise: 'images/Restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg',
+    le_delice_des_sens: 'images/Restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg'
+);
+
+$breakpoints-map:(
+    tablet: 600px,
+    desktop: 1024px
+);
+
+/*--Déclaration des fonctions--*/
+@mixin shadow-box($color: darken(grey, 5%)) {
+    box-shadow: 0 5px 10px $color;
+}
+
+@mixin background_grey($scale : 0%){
+  background-color: darken($lightgrey-color, $scale);
+}
+
+@mixin check-transition-timing($type){
+    transition: $type 300ms 100ms linear;
+}
+
+@mixin breakpoints($min-device) {
+  @media screen and (min-width: map-get($breakpoints-map, $min-device)){
+      @content;
+  }
+}
+
+/* ----- Applicable à toute la page ----- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
+
+body, ul{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+li{
+    list-style: none;
+}
+
+h1, h2, h3{
+    margin: 0;
+}
+
+.flex{
+    display: flex;
+}
+
+/* ----- Mise en page en tete ----- */
+.HomepageHeader{
+  height: 60px;
+  img{
+      margin: auto;
+      width: 162px;
+  }
+}
+
+/* ----- Mise en page ligne de localisation ----- */
+.Location{
+  height: 50px;
+  @include background_grey(10%);
+  color: darken($darkgrey-color, 75%);
+  box-shadow: inset 0 5px 4px -2px darken($lightgrey-color, 16%);
+  i{
+      margin-right: 15px;
+  }
+  p{
+      margin: auto;
+      font-size:0.9rem;
+  }
+}
+
+/* ----- Mise en page bloc de présentation ----- */
+.About{
+  padding: 40px 25px 55px;
+  @include background_grey(0%);
+  text-align: center;
+  h2, p{
+    display:block;
+  }
+  h2{
+      font-weight: 800;
+      font-size:1.5rem;  
+      margin-bottom: 15px;
+  }
+  p{
+      margin-bottom: 30px;
+      font-weight: 200;
+      font-size: 1rem;
+  }
+
+  a{
+    color: white;
+    font-weight: 300;
+    font-size:0.9rem;
+    vertical-align: middle;
+  }   
+
+  .btn{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 200px;
+    height: 48px;
+    padding: 15px;
+    border-radius: 1.1rem;
+    border:none !important;
+    background-image: linear-gradient(160deg,darken($secondary-color,10%), darken($primary-color,10%));
+    @include shadow-box;
+    cursor: pointer;
+    &:hover{
+        background: linear-gradient(180deg, lighten($secondary-color, 8%), lighten($primary-color, 8%));
+        @include shadow-box(darken($lightgrey-color, 30%));
+    }
+}
+}
+
+/* ----- Mise en page bloc du fonctionnement ----- */
+.HowTo{
+  padding: 50px 15px 60px;
+
+  h2{
+      font-weight: 750;
+      font-size:1.4rem;
+      margin: 50px 20px 30px 20px;
+  }
+}
+
+.HowToList{
+  width: 100%;
+}
+
+.HowToStep{
+  height: 75px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .StepNumber{
+      background-color: $primary-color;
+      height: 25px;
+      width: 25px;
+      color: $white;
+      border-radius: 50%;
+      z-index: 2;
+      font-size: 0.9rem;
+      span{
+          margin: auto;
+      }
+  }
+
+  .StepText{
+      position: relative;
+      left: -12px;
+      @include background_grey;
+      border-radius: 1.1rem;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 400;
+      @include shadow-box;
+      i{
+          width: 21px;
+          color: #7D7D7D;
+          margin: 0 25px 0 30px;
+          font-size: 1.2rem;
+      }
+      &:hover{
+          background-color: lighten($primary-color, 36%);
+          i{
+              color: $primary-color;
+          }
+      }
+  }
+}
+
+/* ----- Bloc Restaurants ----- */
+.Restaurants{
+  padding: 60px 20px 50px 20px;
+  @include background_grey (2%);
+
+  h2{
+    padding: 10px;  
+    margin-bottom: 20px;
+  }
+  
+  .RestaurantCard{
+    box-sizing: border-box;
+    height: 250px;
+    border-radius: 1rem;
+    margin-bottom: 20px;
+    @include shadow-box;
+  }
+
+  .RestaurantPic{
+    height: 75%;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+  }
+
+  .RestaurantPicEX {
+    height: 75%;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+
+  .la_palette_du_gout{
+    background-image: url(images/Restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg)
+  }
+  
+  .la_note_enchantee{
+    background-image: url(images/Restaurants/stil-u2Lp8tXIcjw-unsplash.jpg)
+  }
+  
+  .a_la_francaise{
+    background-image: url(images/Restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg)
+  }
+  
+  .le_delice_des_sens{
+    background-image: url(images/Restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg)
+  }
+
+  .New{
+    background-color: $tertiary-color;
+    color: darken($tertiary-color, 30%);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 1px;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .RestaurantDetails{
+    height: 25%;
+    background-color: $white;
+    border-radius: 0 0 1rem 1rem;
+
+    .DetailsText{
+      flex: 1;
+      padding-left: 13px;
+      flex-direction: column;
+      justify-content: center;
+
+      .RestaurantName{
+        margin: 0;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+
+      p{
+        margin: 0;
+        font-weight: 300;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* ----- Mise en page pied de page ----- */
+footer{
+  @include background_grey (65%);
+
+  h3, a, i {
+    color: white;
+  }
+
+  h3{
+    font-family: 'Shrikhand', cursive;
+    font-size:1.2 rem;
+    padding: 20px 20px 10px 20px;
+    }
+
+  li{
+    font-size:0.9rem;
+    font-weight: 300;
+    margin-left: 15px;
+    padding: 5px;
+  }
+  i {
+    font-size:0.8rem;
+    width: 21px;
+    margin: 0 5px 0 0;
+  }
+}
