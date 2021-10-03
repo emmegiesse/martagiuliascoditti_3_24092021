@@ -1,0 +1,308 @@
+@charset "UTF-8";
+/*--Déclaration des variables--*/
+/*--Déclaration des fonctions--*/
+/* ----- Applicable à toute la page ----- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+body, ul {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* ----- Mise en page en tete ----- */
+.HomepageHeader {
+  height: 60px;
+}
+
+.HomepageHeader img {
+  margin: auto;
+  width: 162px;
+}
+
+/* ----- Mise en page ligne de localisation ----- */
+.Location {
+  height: 50px;
+  background-color: #d6d6d6;
+  color: black;
+  -webkit-box-shadow: inset 0 5px 4px -2px #c7c7c7;
+          box-shadow: inset 0 5px 4px -2px #c7c7c7;
+}
+
+.Location i {
+  margin-right: 15px;
+}
+
+.Location p {
+  margin: auto;
+  font-size: 0.9rem;
+}
+
+/* ----- Mise en page bloc de présentation ----- */
+.About {
+  padding: 40px 25px 55px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.About h2, .About p {
+  display: block;
+}
+
+.About h2 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.About p {
+  margin-bottom: 30px;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+.About a {
+  color: white;
+  font-weight: 300;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.About .btn {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  width: 200px;
+  height: 48px;
+  padding: 15px;
+  border-radius: 1.1rem;
+  border: none !important;
+  background-image: linear-gradient(160deg, #ff46cc, #782cd3);
+  -webkit-box-shadow: 0 5px 10px #737373;
+          box-shadow: 0 5px 10px #737373;
+  cursor: pointer;
+}
+
+.About .btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffa2e5), to(#a978e3));
+  background: linear-gradient(180deg, #ffa2e5, #a978e3);
+  -webkit-box-shadow: 0 5px 10px #a3a3a3;
+          box-shadow: 0 5px 10px #a3a3a3;
+}
+
+/* ----- Mise en page bloc du fonctionnement ----- */
+.HowTo {
+  padding: 50px 15px 60px;
+}
+
+.HowTo h2 {
+  font-weight: 750;
+  font-size: 1.4rem;
+  margin: 50px 20px 30px 20px;
+}
+
+.HowToList {
+  width: 100%;
+}
+
+.HowToStep {
+  height: 75px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.HowToStep .StepNumber {
+  background-color: #9356DC;
+  height: 25px;
+  width: 25px;
+  color: #fff;
+  border-radius: 50%;
+  z-index: 2;
+  font-size: 0.9rem;
+}
+
+.HowToStep .StepNumber span {
+  margin: auto;
+}
+
+.HowToStep .StepText {
+  position: relative;
+  left: -12px;
+  background-color: #f0f0f0;
+  border-radius: 1.1rem;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+  -webkit-box-shadow: 0 5px 10px #737373;
+          box-shadow: 0 5px 10px #737373;
+}
+
+.HowToStep .StepText i {
+  width: 21px;
+  color: #7D7D7D;
+  margin: 0 25px 0 30px;
+  font-size: 1.2rem;
+}
+
+.HowToStep .StepText:hover {
+  background-color: #f4eefc;
+}
+
+.HowToStep .StepText:hover i {
+  color: #9356DC;
+}
+
+/* ----- Bloc Restaurants ----- */
+.Restaurants {
+  padding: 60px 20px 50px 20px;
+  background-color: #ebebeb;
+}
+
+.Restaurants h2 {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.Restaurants .RestaurantCard {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 250px;
+  border-radius: 1rem;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 5px 10px #737373;
+          box-shadow: 0 5px 10px #737373;
+}
+
+.Restaurants .RestaurantPic {
+  height: 75%;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  background-size: cover;
+  background-position: bottom center;
+  position: relative;
+}
+
+.Restaurants .RestaurantPicEX {
+  height: 75%;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.Restaurants .la_palette_du_gout {
+  background-image: url(images/Restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.Restaurants .la_note_enchantee {
+  background-image: url(images/Restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+.Restaurants .a_la_francaise {
+  background-image: url(images/Restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+.Restaurants .le_delice_des_sens {
+  background-image: url(images/Restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+.Restaurants .New {
+  background-color: #99E2D0;
+  color: #32b091;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 1px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.Restaurants .RestaurantDetails {
+  height: 25%;
+  background-color: #fff;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.Restaurants .RestaurantDetails .DetailsText {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-left: 13px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Restaurants .RestaurantDetails .DetailsText .RestaurantName {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.Restaurants .RestaurantDetails .DetailsText p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* ----- Mise en page pied de page ----- */
+footer {
+  background-color: #4a4a4a;
+}
+
+footer h3, footer a, footer i {
+  color: white;
+}
+
+footer h3 {
+  font-family: 'Shrikhand', cursive;
+  font-size: 1.2 rem;
+  padding: 20px 20px 10px 20px;
+}
+
+footer li {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-left: 15px;
+  padding: 5px;
+}
+
+footer i {
+  font-size: 0.8rem;
+  width: 21px;
+  margin: 0 5px 0 0;
+}
+/*# sourceMappingURL=style_homepage.css.map */
