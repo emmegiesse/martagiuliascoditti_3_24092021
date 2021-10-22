@@ -19,8 +19,8 @@ $breakpoints-map:(
 );
 
 /*--Déclaration des fonctions--*/
-@mixin shadow-box($color: darken(grey, 5%)) {
-    box-shadow: 0 5px 10px $color;
+@mixin shadow-box($color: lighten(grey, 25%)) {
+    box-shadow: 0 5px 15px $color;
 }
 
 @mixin background_grey($scale : 0%){
@@ -36,6 +36,8 @@ $breakpoints-map:(
       @content;
   }
 }
+
+/*--Transitions--*/
 
 /* ----- Applicable à toute la page ----- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
@@ -65,66 +67,82 @@ h1, h2, h3{
 
 /* ----- Mise en page en tete ----- */
 .HomepageHeader{
-  height: 60px;
+  height: 50px;
 
   img{
       margin: auto;
+      margin-bottom: 16px;
       width: 170px;
   }
+
+@include breakpoints(tablet){
+  height: 120px;
+  img{
+    margin-bottom: 20px;
+    width: 250px;
+}
+}
 }
 
 /* ----- Mise en page ligne de localisation ----- */
 .Location{
   height: 50px;
-  @include background_grey(10%);
-  color: darken($darkgrey-color, 75%);
+  @include background_grey(8%);
+  color: darken($darkgrey-color, 50%);
   box-shadow: inset 0 5px 4px -2px darken($lightgrey-color, 16%);
 
   i{
-      margin-right: 15px;
+    font-size: 20px; 
+    margin-right: 18px;
   }
 
   p{
-      margin: auto;
-      font-size:0.9rem;
+    margin: auto;
+    font-size:1rem;
   }
+
+@include breakpoints(tablet){
+  p{
+  font-size: 1.3rem !important;
+  }
+}
 }
 
 /* ----- Mise en page bloc de présentation ----- */
 .About{
-  padding: 40px 25px 55px;
+  padding: 60px 25px 55px;
   @include background_grey(0%);
   text-align: center;
   h2, p{
     display:block;
   }
   h2{
-      font-weight: 800;
-      font-size:1.5rem;  
-      margin-bottom: 15px;
+      font-weight: 550;
+      font-size:1.7rem;  
+      margin: 0 40px 15px 40px;
   }
   p{
       margin-bottom: 30px;
       font-weight: 200;
-      font-size: 1rem;
+      font-size: 1.2rem;
   }
 
   a{
     color: white;
-    font-weight: 300;
-    font-size:0.9rem;
+    font-weight: 400;
+    font-size:1rem;
     vertical-align: middle;
   }   
 
   .btn{
     box-sizing: border-box;
     display: inline-block;
-    width: 200px;
+    width: 230px;
     height: 48px;
     padding: 15px;
-    border-radius: 1.1rem;
+    border-radius: 2rem;
     border:none !important;
-    background-image: linear-gradient(160deg,darken($secondary-color,10%), darken($primary-color,10%));
+    background-image: linear-gradient(180deg,darken($secondary-color, 5%), darken($primary-color,5%));
     @include shadow-box;
     cursor: pointer;
     &:hover{
@@ -132,16 +150,40 @@ h1, h2, h3{
         @include shadow-box(darken($lightgrey-color, 30%));
     }
 }
+
+@include breakpoints(tablet){
+  h2{
+  font-size: 1.9rem !important;
+  }
+  a, p{
+  font-size: 1.5rem !important;
+  }
+  .btn{
+    width: 650px;
+    height: 60px;
+    background-image: linear-gradient(160deg,lighten($secondary-color,3%), lighten($primary-color,3%));
+  }
+}
 }
 
 /* ----- Mise en page bloc du fonctionnement ----- */
 .HowTo{
-  padding: 50px 15px 60px;
+  padding: 55px 10px 55px 20px;
+
   h2{
-      font-weight: 750;
-      font-size:1.4rem;
-      margin: 50px 20px 30px 20px;
+    font-weight: 550;
+    font-size:1.7rem;
+    margin-bottom:35px;
   }
+
+@include breakpoints(tablet){
+  padding: 20px 10px 30px;
+  h2{
+    font-weight: 600;
+    font-size:1.5rem;
+    margin: 30px 20px;
+  }
+} 
 }
 
 .HowToList{
@@ -149,10 +191,10 @@ h1, h2, h3{
 }
 
 .HowToStep{
-  height: 75px;
+  height: 85px;
   width: 100%;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 
   .StepNumber{
       background-color: $primary-color;
@@ -171,7 +213,7 @@ h1, h2, h3{
       position: relative;
       left: -12px;
       @include background_grey;
-      border-radius: 1.1rem;
+      border-radius: 1.6rem;
       width: 100%;
       height: 100%;
       align-items: center;
@@ -195,24 +237,25 @@ h1, h2, h3{
 
 /* ----- Bloc Restaurants ----- */
 .Restaurants{
-  padding: 60px 20px 50px 20px;
-  @include background_grey (2%);
+  padding: 60px 25px 50px 25px;
+  @include background_grey (1%);
 
   h2{
-    padding: 10px;  
+    font-weight: 600;
+    font-size:1.5rem;
     margin-bottom: 20px;
   }
   
   .RestaurantCard{
     box-sizing: border-box;
-    height: 250px;
+    height: 280px;
     border-radius: 1rem;
     margin-bottom: 20px;
     @include shadow-box;
   }
 
   .RestaurantPic{
-    height: 75%;
+    height: 70%;
     width: 100%;
     border-radius: 1rem 1rem 0 0;
     background-size: cover;
@@ -221,7 +264,7 @@ h1, h2, h3{
   }
 
   .RestaurantPicEX {
-    height: 75%;
+    height: 70%;
     width: 100%;
     border-radius: 1rem 1rem 0 0;
     background-size: cover;
@@ -247,43 +290,77 @@ h1, h2, h3{
 
   .New{
     background-color: $tertiary-color;
-    color: darken($tertiary-color, 30%);
+    color: darken($tertiary-color, 40%);
     position: absolute;
-    top: 15px;
-    right: 15px;
-    margin: 10px;
-    padding: 5px 10px;
+    top: 12px;
+    right: 12px;
+    padding: 6px 15px;
     border-radius: 1px;
     font-weight: 500;
     font-size: 0.9rem;
   }
 
   .RestaurantDetails{
-    height: 25%;
+    height: 30%;
     background-color: $white;
     border-radius: 0 0 1rem 1rem;
 
     .DetailsText{
       flex: 1;
-      padding-left: 13px;
+      padding-left: 15px;
       flex-direction: column;
       justify-content: center;
 
       .RestaurantName{
-        margin: 0;
-        font-weight: 700;
-        font-size: 1rem;
+        font-weight: 600;
+        font-size: 1.2rem;
         margin-bottom: 5px;
       }
 
       p{
         margin: 0;
         font-weight: 300;
-        font-size: 0.9rem;
+        font-size: 1.2rem;
       }
     }
   }
 }
+
+#EmptyHeart {
+  margin-top: 25px;
+  margin-right: 20px;
+  position: relative;
+  color:#7D7D7D;
+  height: 26px;
+  opacity: 1;
+  display: block; 
+}
+#FullHeart {
+  margin-top: 25px;
+  margin-right: 20px;
+  height: 25px;
+}
+
+.Like {
+  #FullHeart {
+    opacity: 0;
+  }
+  #EmptyHeart {
+    opacity: 1;
+  }
+  &:hover{
+    #EmptyHeart {
+      display: none;
+      opacity: 0;
+    }
+    #FullHeart {
+      display: block;
+      opacity: 1;
+      transition: opacity 2s ease-in; 
+    }
+  }
+}
+
 
 /* ----- Mise en page pied de page ----- */
 footer{
