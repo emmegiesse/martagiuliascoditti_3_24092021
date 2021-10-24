@@ -119,6 +119,42 @@ h1, h2, h3{
     }
 }
 
+#EmptyHeart {
+    margin-top: 25px;
+    margin-right: 20px;
+    position: relative;
+    color:#7D7D7D;
+    height: 26px;
+    opacity: 1;
+    display: block; 
+  }
+  #FullHeart {
+    margin-top: 25px;
+    margin-right: 20px;
+    height: 25px;
+  }
+  
+  .Like {
+    #FullHeart {
+      opacity: 0;
+    }
+    #EmptyHeart {
+      opacity: 1;
+    }
+    &:hover{
+      #EmptyHeart {
+        display: none;
+        opacity: 0;
+      }
+      #FullHeart {
+        display: block;
+        opacity: 1;
+        transition: opacity 2s ease-in; 
+      }
+    }
+  }
+
+
 /* ----- Entrées ----- */
 .Menu{
     @include background_grey (4%);
@@ -186,7 +222,7 @@ h1, h2, h3{
 }
 
 
-/* ----- Buton commander ----- */1
+/* ----- Buton commander ----- */
 .btn{
     display:block;
     margin:auto !important;
@@ -213,6 +249,76 @@ h1, h2, h3{
     }
     @include breakpoints(tablet){
         transform: scale(1.1);
+    }
+}
+
+/* ----- Transition plats__Page ----- */
+.DishOptions{
+    opacity: 0;
+
+    .DishText{
+        transform: scaleX(1);
+        transform-origin: left;
+        @include check-transition-timing(width);
+    }
+
+    .DishPrice{
+        transform-origin: right;
+        @include check-transition-timing(transform);
+    }
+
+    .Check{
+        display: flex;
+        background-color: $tertiary-color;
+        width: $check-transition-width;
+        transform-origin: right;
+        transform: scaleX(0);
+        @include check-transition-timing(transform);
+        .CheckIcon{
+            color: $white;
+            font-size: 1.6rem;
+            margin: auto;
+            transform: rotate(0deg);
+            @include check-transition-timing(transform)
+        }
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    &:hover .DishText{
+        width: 60%;
+        .DishName, p{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+    &:hover .Check{
+        transform: scaleX(1);
+    }
+    &:hover .CheckIcon{
+        transform: rotate(360deg);
+    }
+    &:hover .Dish_Price{
+        transform: translateX(-$check-transition-width);
+    }
+
+    @keyframes menu-load{
+        0% {
+            transform: translateY(20px);
+        }
+        75%{
+            opacity: .5;
+        }
+        100% {
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+    @for $i from 1 through ($max-dishes){
+        &:nth-of-type(#{$i}){
+            animation: menu-load 800ms $menu-appear-delay*$i forwards;
+        }
     }
 }
 

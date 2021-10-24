@@ -6,6 +6,10 @@ $lightgrey-color:darken(whitesmoke, 2%);
 $darkgrey-color: darken(grey, 25%);
 $white:#fff;
 
+$check-transition-width: 70px;
+$menu-appear-delay: 200ms;
+$max-dishes: 4;
+
 $images-resto:(
     la_palette_du_gout: 'images/Restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg',
     la_note_enchantee: 'images/Restaurants/stil-u2Lp8tXIcjw-unsplash.jpg',
@@ -37,7 +41,44 @@ $breakpoints-map:(
   }
 }
 
-/*--Transitions--*/
+/*--Page Loader--*/
+
+.page_loader{
+  display: flex;
+  position: fixed;
+  z-index: 3;
+  transform: scale(0);
+  background-color: rgba($gray-color, 0.5);
+  animation: load-background 3s 100ms backwards;
+  .spinner{
+      transform: scale(0);
+      font-size: 8rem;
+      color: $primary-color;
+      margin: auto;
+      animation: load-spinner 3s 100ms linear backwards;
+  }
+}
+
+@keyframes load-spinner{
+  0% {
+      transform: rotate(0deg);
+  }
+  75% {
+      opacity: .75;
+  }
+  100% {
+      transform: rotate(3turn);
+      opacity: 0;
+  }
+}
+
+@keyframes load-background{
+  0%,100% {
+      transform: scale(1);
+      height: 100vh;
+      width: 100vw;
+  }
+}
 
 /* ----- Applicable à toute la page ----- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');

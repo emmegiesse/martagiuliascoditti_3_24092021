@@ -99,6 +99,42 @@ h1, h2, h3 {
   padding-top: 13px;
 }
 
+#EmptyHeart {
+  margin-top: 25px;
+  margin-right: 20px;
+  position: relative;
+  color: #7D7D7D;
+  height: 26px;
+  opacity: 1;
+  display: block;
+}
+
+#FullHeart {
+  margin-top: 25px;
+  margin-right: 20px;
+  height: 25px;
+}
+
+.Like #FullHeart {
+  opacity: 0;
+}
+
+.Like #EmptyHeart {
+  opacity: 1;
+}
+
+.Like:hover #EmptyHeart {
+  display: none;
+  opacity: 0;
+}
+
+.Like:hover #FullHeart {
+  display: block;
+  opacity: 1;
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+}
+
 /* ----- Entrées ----- */
 .Menu {
   background-color: #e6e6e6;
@@ -175,7 +211,6 @@ h1, h2, h3 {
 }
 
 /* ----- Buton commander ----- */
-1
 .btn {
   display: block;
   margin: auto !important;
@@ -197,12 +232,10 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-1
 .btn a {
   color: #fff;
 }
 
-1
 .btn:hover {
   background: linear-gradient(170deg, #ffa2e5, #a978e3);
   -webkit-box-shadow: 0 5px 10px 20%;
@@ -210,8 +243,7 @@ h1, h2, h3 {
 }
 
 @media screen and (min-width: 600px) {
-  1
-.btn {
+  .btn {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
   }
