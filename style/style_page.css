@@ -71,6 +71,176 @@ h1, h2, h3 {
   background-image: url(../style/images/Restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
 
+/* ----- Menu Loader ----- */
+.dishes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fff;
+  margin-top: 14px;
+  border-radius: 1rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 5px 10px #737373;
+          box-shadow: 0 5px 10px #737373;
+  padding: 0;
+  position: relative;
+  opacity: 0;
+}
+
+.dishes__text {
+  width: 80%;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: width 300ms 100ms linear;
+  transition: width 300ms 100ms linear;
+  padding: 13px 0 13px 12px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dishes__text .dish_name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+.dishes__text p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+}
+
+.dishes__price {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: #404040;
+  font-weight: 700;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+}
+
+.dishes .check__animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #99E2D0;
+  width: 72px;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+}
+
+.dishes .check__animation .anim_icon {
+  color: #fff;
+  font-size: 1.6rem;
+  margin: auto;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+}
+
+.dishes:hover {
+  cursor: pointer;
+}
+
+.dishes:hover .dishes__text {
+  width: 60%;
+}
+
+.dishes:hover .dishes__text .dish_name, .dishes:hover .dishes__text p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dishes:hover .check__animation {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.dishes:hover .anim_icon {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.dishes:hover .dishes__price {
+  -webkit-transform: translateX(-72px);
+          transform: translateX(-72px);
+}
+
+@-webkit-keyframes menu-load {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  75% {
+    opacity: .5;
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-load {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  75% {
+    opacity: .5;
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.dishes:nth-of-type(1) {
+  -webkit-animation: menu-load 800ms 400ms forwards;
+          animation: menu-load 800ms 400ms forwards;
+}
+
+.dishes:nth-of-type(2) {
+  -webkit-animation: menu-load 800ms 800ms forwards;
+          animation: menu-load 800ms 800ms forwards;
+}
+
+.dishes:nth-of-type(3) {
+  -webkit-animation: menu-load 800ms 1200ms forwards;
+          animation: menu-load 800ms 1200ms forwards;
+}
+
+.dishes:nth-of-type(4) {
+  -webkit-animation: menu-load 800ms 1600ms forwards;
+          animation: menu-load 800ms 1600ms forwards;
+}
+
 /* ----- Nom du restaurant + like ----- */
 .RestaurantName {
   height: 60px;
@@ -211,6 +381,11 @@ h1, h2, h3 {
 }
 
 /* ----- Buton commander ----- */
+.Button {
+  width: 100%;
+  text-align: center;
+}
+
 .btn {
   display: block;
   margin: auto !important;
@@ -242,11 +417,126 @@ h1, h2, h3 {
           box-shadow: 0 5px 10px 20%;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 300px) {
   .btn {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
   }
+}
+
+/* ----- Transition plats__Page ----- */
+.DishOptions {
+  opacity: 0;
+}
+
+.DishOptions .DishText {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: width 300ms 100ms linear;
+  transition: width 300ms 100ms linear;
+}
+
+.DishOptions .DishPrice {
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+}
+
+.DishOptions .Check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #99E2D0;
+  width: 72px;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+}
+
+.DishOptions .Check .CheckIcon {
+  color: #fff;
+  font-size: 1.6rem;
+  margin: auto;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+}
+
+.DishOptions:hover {
+  cursor: pointer;
+}
+
+.DishOptions:hover .DishText {
+  width: 60%;
+}
+
+.DishOptions:hover .DishText .DishName, .DishOptions:hover .DishText p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.DishOptions:hover .Check {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.DishOptions:hover .CheckIcon {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.DishOptions:hover .Dish_Price {
+  -webkit-transform: translateX(-72px);
+          transform: translateX(-72px);
+}
+
+@keyframes menu-load {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  75% {
+    opacity: .5;
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.DishOptions:nth-of-type(1) {
+  -webkit-animation: menu-load 800ms 400ms forwards;
+          animation: menu-load 800ms 400ms forwards;
+}
+
+.DishOptions:nth-of-type(2) {
+  -webkit-animation: menu-load 800ms 800ms forwards;
+          animation: menu-load 800ms 800ms forwards;
+}
+
+.DishOptions:nth-of-type(3) {
+  -webkit-animation: menu-load 800ms 1200ms forwards;
+          animation: menu-load 800ms 1200ms forwards;
+}
+
+.DishOptions:nth-of-type(4) {
+  -webkit-animation: menu-load 800ms 1600ms forwards;
+          animation: menu-load 800ms 1600ms forwards;
 }
 
 /* ----- Mise en page pied de page ----- */

@@ -12,7 +12,7 @@
   margin-right: 20px;
 }
 
-.RestaurantName .emptyHeart {
+.RestaurantName #EmptyHeart {
   font-size: 1.7rem;
   cursor: pointer;
   position: relative;
@@ -20,21 +20,20 @@
   transition: color 150ms 50ms ease;
 }
 
-.RestaurantName .emptyHeart:hover {
+.RestaurantName #EmptyHeart:hover {
   color: transparent;
 }
 
-.RestaurantName .emptyHeart:hover > .fullHeart {
+.RestaurantName #EmptyHeart:hover > .fullHeart {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-.RestaurantName .fullHeart {
+.RestaurantName #FullHeart {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(170deg, #FF79DA, #9356DC);
-  -webkit-background-clip: text;
+  background: linear-gradient(160deg, #FF79DA, #9356DC);
   -webkit-text-fill-color: transparent;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -72,7 +71,7 @@
   display: -ms-flexbox;
   display: flex;
   background-color: #99E2D0;
-  width: 72px;
+  width: 70px;
   -webkit-transform-origin: right;
           transform-origin: right;
   -webkit-transform: scaleX(0);
@@ -120,8 +119,8 @@
 }
 
 .DishOptions:hover .Dish_Price {
-  -webkit-transform: translateX(-72px);
-          transform: translateX(-72px);
+  -webkit-transform: translateX(-70px);
+          transform: translateX(-70px);
 }
 
 @-webkit-keyframes menu-load {

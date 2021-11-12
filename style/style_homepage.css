@@ -1,9 +1,81 @@
 @charset "UTF-8";
 /*--Déclaration des variables--*/
 /*--Déclaration des fonctions--*/
-/*--Transitions--*/
-/* ----- Applicable à toute la page ----- */
+/*--Page Loader--*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+.pageLoader {
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 3;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background-color: white;
+  -webkit-animation: load-background 3s 100ms backwards;
+          animation: load-background 3s 100ms backwards;
+}
+
+.pageLoader .spinner {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  font-size: 8rem;
+  color: #9356DC;
+  margin: auto;
+  -webkit-animation: load-spinner 3s 100ms linear backwards;
+          animation: load-spinner 3s 100ms linear backwards;
+}
+
+@-webkit-keyframes load-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    -webkit-transform: rotate(3turn);
+            transform: rotate(3turn);
+    opacity: 0;
+  }
+}
+
+@keyframes load-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    -webkit-transform: rotate(3turn);
+            transform: rotate(3turn);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes load-background {
+  0%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+@keyframes load-background {
+  0%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+/* ----- Applicable à toute la page ----- */
 body, ul {
   margin: 0;
   padding: 0;
@@ -51,7 +123,7 @@ h1, h2, h3 {
 }
 
 /* ----- Mise en page ligne de localisation ----- */
-.Location {
+.location {
   height: 50px;
   background-color: gainsboro;
   color: black;
@@ -59,53 +131,53 @@ h1, h2, h3 {
           box-shadow: inset 0 5px 4px -2px #c7c7c7;
 }
 
-.Location i {
+.location i {
   font-size: 20px;
   margin-right: 18px;
 }
 
-.Location p {
+.location p {
   margin: auto;
   font-size: 1rem;
 }
 
 @media screen and (min-width: 600px) {
-  .Location p {
+  .location p {
     font-size: 1.3rem !important;
   }
 }
 
 /* ----- Mise en page bloc de présentation ----- */
-.About {
+.about {
   padding: 60px 25px 55px;
   background-color: #f0f0f0;
   text-align: center;
 }
 
-.About h2, .About p {
+.about h2, .about p {
   display: block;
 }
 
-.About h2 {
+.about h2 {
   font-weight: 550;
   font-size: 1.7rem;
   margin: 0 40px 15px 40px;
 }
 
-.About p {
+.about p {
   margin-bottom: 30px;
   font-weight: 200;
   font-size: 1.2rem;
 }
 
-.About a {
+.about a {
   color: white;
   font-weight: 400;
   font-size: 1rem;
   vertical-align: middle;
 }
 
-.About .btn {
+.about .btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: inline-block;
@@ -121,7 +193,7 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-.About .btn:hover {
+.about .btn:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#ffa2e5), to(#a978e3));
   background: linear-gradient(180deg, #ffa2e5, #a978e3);
   -webkit-box-shadow: 0 5px 15px #a3a3a3;
@@ -129,13 +201,20 @@ h1, h2, h3 {
 }
 
 @media screen and (min-width: 600px) {
-  .About h2 {
+  .about .btn {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .about h2 {
     font-size: 1.9rem !important;
   }
-  .About a, .About p {
+  .about a, .about p {
     font-size: 1.5rem !important;
   }
-  .About .btn {
+  .about .btn {
     width: 650px;
     height: 60px;
     background-image: linear-gradient(160deg, #ff88de, #9b63df);
@@ -143,32 +222,38 @@ h1, h2, h3 {
 }
 
 /* ----- Mise en page bloc du fonctionnement ----- */
-.HowTo {
+.howTo {
   padding: 55px 10px 55px 20px;
 }
 
-.HowTo h2 {
+.howTo h2 {
   font-weight: 550;
   font-size: 1.7rem;
   margin-bottom: 35px;
 }
 
 @media screen and (min-width: 600px) {
-  .HowTo {
+  .howTo {
     padding: 20px 10px 30px;
   }
-  .HowTo h2 {
+  .howTo h2 {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 30px 20px;
   }
 }
 
-.HowToList {
+.howToList {
   width: 100%;
 }
 
-.HowToStep {
+@media screen and (min-width: 600px) {
+  .howToList {
+    display: row;
+  }
+}
+
+.howToStep {
   height: 85px;
   width: 100%;
   -webkit-box-align: center;
@@ -177,7 +262,7 @@ h1, h2, h3 {
   margin-bottom: 30px;
 }
 
-.HowToStep .StepNumber {
+.howToStep .stepNumber {
   background-color: #9356DC;
   height: 25px;
   width: 25px;
@@ -187,11 +272,20 @@ h1, h2, h3 {
   font-size: 0.9rem;
 }
 
-.HowToStep .StepNumber span {
+.howToStep .stepNumber span {
   margin: auto;
 }
 
-.HowToStep .StepText {
+@media screen and (min-width: 600px) {
+  .howToStep .stepNumber {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    font-size: 1rem;
+  }
+}
+
+.stepText {
   position: relative;
   left: -12px;
   background-color: #f0f0f0;
@@ -207,34 +301,54 @@ h1, h2, h3 {
           box-shadow: 0 5px 15px silver;
 }
 
-.HowToStep .StepText i {
+.stepText i {
   width: 21px;
   color: #7D7D7D;
   margin: 0 25px 0 30px;
   font-size: 1.2rem;
 }
 
-.HowToStep .StepText:hover {
+.stepText:hover {
   background-color: #f4eefc;
 }
 
-.HowToStep .StepText:hover i {
+.stepText:hover i {
   color: #9356DC;
 }
 
-/* ----- Bloc Restaurants ----- */
-.Restaurants {
+@media screen and (min-width: 600px) {
+  .stepText {
+    font-size: 1.1rem;
+  }
+}
+
+/* ----- Bloc restaurants ----- */
+.restaurants {
   padding: 60px 25px 50px 25px;
   background-color: #ededed;
 }
 
-.Restaurants h2 {
+.restaurants h2 {
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-.Restaurants .RestaurantCard {
+@media screen and (min-width: 600px) {
+  .restaurants h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .restaurantsBox {
+    display: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.restaurantsBox .restaurantCard {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 280px;
@@ -244,7 +358,15 @@ h1, h2, h3 {
           box-shadow: 0 5px 15px silver;
 }
 
-.Restaurants .RestaurantPic {
+@media screen and (min-width: 600px) {
+  .restaurantsBox .restaurantCard {
+    width: 50%;
+    height: 400px;
+    padding: 20px;
+  }
+}
+
+.restaurantsBox .restaurantPic {
   height: 70%;
   width: 100%;
   border-radius: 1rem 1rem 0 0;
@@ -253,7 +375,13 @@ h1, h2, h3 {
   position: relative;
 }
 
-.Restaurants .RestaurantPicEX {
+@media screen and (min-width: 600px) {
+  .restaurantsBox .restaurantPic {
+    height: 80%;
+  }
+}
+
+.restaurantsBox .restaurantPicEX {
   height: 70%;
   width: 100%;
   border-radius: 1rem 1rem 0 0;
@@ -262,23 +390,29 @@ h1, h2, h3 {
   position: relative;
 }
 
-.Restaurants .la_palette_du_gout {
-  background-image: url(images/Restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+@media screen and (min-width: 600px) {
+  .restaurantsBox .restaurantPicEX {
+    height: 80%;
+  }
 }
 
-.Restaurants .la_note_enchantee {
-  background-image: url(images/Restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+.restaurantsBox .la_palette_du_gout {
+  background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
 }
 
-.Restaurants .a_la_francaise {
-  background-image: url(images/Restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+.restaurantsBox .la_note_enchantee {
+  background-image: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
 }
 
-.Restaurants .le_delice_des_sens {
-  background-image: url(images/Restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+.restaurantsBox .a_la_francaise {
+  background-image: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
 }
 
-.Restaurants .New {
+.restaurantsBox .le_delice_des_sens {
+  background-image: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+.restaurantsBox .New {
   background-color: #99E2D0;
   color: #278870;
   position: absolute;
@@ -290,13 +424,25 @@ h1, h2, h3 {
   font-size: 0.9rem;
 }
 
-.Restaurants .RestaurantDetails {
+@media screen and (min-width: 600px) {
+  .restaurantsBox .New {
+    font-size: 1.4rem;
+  }
+}
+
+.restaurantsBox .restaurantDetails {
   height: 30%;
   background-color: #fff;
   border-radius: 0 0 1rem 1rem;
 }
 
-.Restaurants .RestaurantDetails .DetailsText {
+@media screen and (min-width: 600px) {
+  .restaurantsBox .restaurantDetails {
+    height: 20%;
+  }
+}
+
+.restaurantsBox .restaurantDetails .detailsText {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -310,19 +456,28 @@ h1, h2, h3 {
           justify-content: center;
 }
 
-.Restaurants .RestaurantDetails .DetailsText .RestaurantName {
+.restaurantsBox .restaurantDetails .detailsText .restaurantName {
   font-weight: 600;
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
-.Restaurants .RestaurantDetails .DetailsText p {
+@media screen and (min-width: 600px) {
+  .restaurantsBox .restaurantDetails .detailsText .restaurantName {
+    font-size: 1.4rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+.restaurantsBox .restaurantDetails .detailsText p {
   margin: 0;
   font-weight: 300;
   font-size: 1.2rem;
 }
 
-#EmptyHeart {
+/* ----- Transition like ----- */
+#emptyHeart {
   margin-top: 25px;
   margin-right: 20px;
   position: relative;
@@ -332,26 +487,26 @@ h1, h2, h3 {
   display: block;
 }
 
-#FullHeart {
+#fullHeart {
   margin-top: 25px;
   margin-right: 20px;
   height: 25px;
 }
 
-.Like #FullHeart {
+.Like #fullHeart {
   opacity: 0;
 }
 
-.Like #EmptyHeart {
+.Like #emptyHeart {
   opacity: 1;
 }
 
-.Like:hover #EmptyHeart {
+.Like:hover #emptyHeart {
   display: none;
   opacity: 0;
 }
 
-.Like:hover #FullHeart {
+.Like:hover #fullHeart {
   display: block;
   opacity: 1;
   -webkit-transition: opacity 2s ease-in;
@@ -384,5 +539,14 @@ footer i {
   font-size: 0.8rem;
   width: 21px;
   margin: 0 5px 0 0;
+}
+
+@media screen and (min-width: 600px) {
+  footer h3 {
+    font-size: 1.6rem;
+  }
+  footer li {
+    font-size: 1.3rem;
+  }
 }
 /*# sourceMappingURL=style_homepage.css.map */

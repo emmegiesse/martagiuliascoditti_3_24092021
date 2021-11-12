@@ -6,7 +6,7 @@ $lightgrey-color:darken(whitesmoke, 2%);
 $darkgrey-color: darken(grey, 25%);
 $white:#fff;
 
-$check-transition-width: 72px;
+$check-transition-width: 70px;
 $menu-appear-delay: 200ms;
 $max-dishes: 4;
 
@@ -16,7 +16,7 @@ $max-dishes: 4;
 }
 
 @mixin heart-transition{
-    .emptyHeart{
+    #EmptyHeart{
         font-size: 1.7rem;
         cursor: pointer;
         position: relative;
@@ -28,12 +28,11 @@ $max-dishes: 4;
             transform: scale(1);
         }
     }
-    .fullHeart{
+    #FullHeart{
         position: absolute;
         top: 0;
         left: 0;
-        background: linear-gradient(170deg, $secondary-color, $primary-color);
-        -webkit-background-clip: text;
+        background: linear-gradient(160deg, $secondary-color, $primary-color);
         -webkit-text-fill-color: transparent;
         transform: scale(0);
         transition: transform 150ms 50ms ease-in-out;
