@@ -66,7 +66,7 @@ background-color: darken($lightgreyColor, $scale);
   }
 }
 
-/* ----- Applicable à toute la page ----- */
+/* ----- Applicable à toute la page----- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
 
 body, ul{
@@ -110,7 +110,7 @@ h1, h2, h3{
   }
 }
 
-/* ----- Mise en page ligne de localisation ----- */
+/* ----- Mise en page localisation ----- */
 .location {
   height: 55px;
   @include backgroundGrey(6%);
