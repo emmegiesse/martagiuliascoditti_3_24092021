@@ -3,7 +3,7 @@ $primaryColor:#9356DC;
 $secondaryColor:#FF79DA;
 $tertiaryColor:#99E2D0;
 $lightgreyColor:darken(whitesmoke, 2%);
-$darkgreyColor: darken(grey, 25%);
+$darkgreyColor: darken(rgb(43, 42, 42), 80%);
 $white:#fff;
 
 $breakpoints-map:(
@@ -16,7 +16,7 @@ $menuAppearDelay: 400ms;
 $maxDishes: 4;
 
 /*--Déclaration des fonctions--*/
-@mixin shadowBox($color: darken(grey, 5%)) {
+@mixin shadowBox($color: darken(whitesmoke, 15%)) {
     box-shadow: 0 5px 10px $color;
 }
 
@@ -62,7 +62,7 @@ h1, h2, h3{
 
 /* ----- Mise en page en tete ----- */
 .pageHeader{
-    height: 60px;
+    height: 62px;
     @include breakpoints(tablet){
         height: 80px;
       }
@@ -80,8 +80,9 @@ h1, h2, h3{
 
     i{
         position:absolute;
-        margin-top:25px;
+        margin-top:20px;
         margin-left: 15px;
+        font-size: 1.2rem;
         @include breakpoints(tablet){
             font-size: 1.5rem;
         }
@@ -90,7 +91,7 @@ h1, h2, h3{
 
 /* ----- Photo de présentation du restaurant ----- */
 .pageRestaurantPic{
-    height: 300px;
+    height: 280px;
     width: 100%;
     background-size: cover;
     background-position: center center;
@@ -99,123 +100,18 @@ h1, h2, h3{
         height: 350px;
     }
 }
- 
+
 .le_delice_des_sens{
     background-image: url(../style/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg)
 }
 
-/* ----- menu Loader ----- */
-.dishes{
-    display: flex;
-    justify-content: space-between;
-    background-color: $white;
-    margin-top: 14px;
-    border-radius: 1rem;
-    overflow: hidden;
-    @include shadowBox;
-    padding: 0;
-    position: relative;
-    opacity: 0;
-
-    &__text{
-        width: 80%;
-        transform: scaleX(1);
-        transform-origin: left;
-        @include checkTransitionTiming(width);
-        padding: 13px 0 13px 12px;
-        justify-content: space-between;
-        .dish_name{
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            white-space: nowrap;
-        }
-        p{
-            margin: 0;
-            font-weight: 300;
-            font-size: 0.9rem;
-            text-overflow: ellipsis;
-        }
-    }
-
-    &__price{
-        align-self: flex-end;
-        color: $darkgreyColor;
-        font-weight: 700;
-        position: absolute;
-        right: 15px;
-        bottom: 15px;
-        transform-origin: right;
-        @include checkTransitionTiming(transform);
-    }
-
-    .check__animation{
-        display: flex;
-        background-color: $tertiaryColor;
-        width: $checkTransitionWidth;
-        transform-origin: right;
-        transform: scaleX(0);
-        @include checkTransitionTiming(transform);
-        .anim_icon{
-            color: $white;
-            font-size: 1.6rem;
-            margin: auto;
-            transform: rotate(0deg);
-            @include checkTransitionTiming(transform);
-        }
-    }
-
-    &:hover{
-        cursor: pointer;
-    }
-
-    &:hover .dishes__text{
-        width: 60%;
-        .dish_name, p{
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-    }
-
-    &:hover .check__animation{
-        transform: scaleX(1);
-    }
-
-    &:hover .anim_icon{
-        transform: rotate(360deg);
-    }
-
-    &:hover .dishes__price{
-        transform: translateX(-$checkTransitionWidth);
-    }
-
-    @keyframes menu-load{
-        0% {
-            transform: translateY(20px);
-        }
-        75%{
-            opacity: .5;
-        }
-        100% {
-            transform: translate(0);
-            opacity: 1;
-        }
-    }
-    @for $i from 1 through ($maxDishes){
-        &:nth-of-type(#{$i}){
-            animation: menu-load 800ms $menuAppearDelay*$i forwards;
-        }
-    }
-}
-
 /* ----- Nom du restaurant + like ----- */
 .restaurantName{
-    height: 60px;
-    margin-top: -30px;
+    height: 90px;
+    margin-top: -35px;
+    padding-top:15px;
     justify-content: space-between;
-    align-items: baseline;
-    @include backgroundGrey (4%);
+    @include backgroundGrey (0%);
     border-radius: 1.8rem 1.8rem 0 0;
     position: relative;
 
@@ -224,7 +120,7 @@ h1, h2, h3{
         padding-left: 30px;
         padding-top: 20px;
         font-family: 'Shrikhand', cursive;
-        font-size:1.4rem;
+        font-size:1.8rem;
         @include breakpoints(tablet){
             font-size: 1.8rem;
         }
@@ -234,18 +130,18 @@ h1, h2, h3{
 /* ----- Transition like ----- */
 #emptyHeart {
     margin-top: 25px;
-    margin-right: 20px;
+    margin-right: 40px;
     position: relative;
     color:#7D7D7D;
-    height: 26px;
+    height: 30px;
     opacity: 1;
     display: block; 
   }
 
   #fullHeart {
     margin-top: 25px;
-    margin-right: 20px;
-    height: 25px;
+    margin-right: 40px;
+    height: 28px;
   }
   
   .Like {
@@ -268,20 +164,20 @@ h1, h2, h3{
     }
   }
 
-/* ----- Entrées ----- */
+/* ----- Menu ----- */
 .menu{
-    @include backgroundGrey (4%);
+    @include backgroundGrey (0%);
     padding: 10px 20px;
 
     .startersMenu, .mainsMenu, .dessertsMenu{
-        margin-bottom:30px;
+        margin-bottom:46px;
     }
 
     h3{
-        padding-top: 20px;
-        font-size: 1rem;
+        padding-top: 5px;
+        font-size: 1.1rem;
         text-transform: uppercase;
-        font-weight: 200;
+        font-weight: 300;
         @include breakpoints(tablet){
             font-size: 1.5rem;
         }
@@ -301,7 +197,7 @@ h1, h2, h3{
     display: flex;
     justify-content: space-between;
     background-color: $white;
-    margin-top: 14px;
+    margin-top: 15px;
     border-radius: 1rem;
     overflow: hidden;
     @include shadowBox;
@@ -310,7 +206,6 @@ h1, h2, h3{
     
     .dishText{
         flex-wrap: wrap;
-        width: 80%;
         padding: 13px 0 13px 12px;
         justify-content: space-between;
         @include breakpoints(tablet){
@@ -320,26 +215,26 @@ h1, h2, h3{
     
         .dishName{
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 5px;
             white-space: nowrap;
+            width: 90%;
             @include breakpoints(tablet){
                 display: block;
                 width: 50%;
                 margin-bottom: 0px;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
         }
 
         p{
-            margin: 0;
+            margin: 1px;
             font-weight: 300;
-            font-size: 0.9rem;
+            font-size: 1rem;
             text-overflow: ellipsis;
             @include breakpoints(tablet){
                 display: block;
-                justify-content: baseline;
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
         }
     }
@@ -358,44 +253,7 @@ h1, h2, h3{
     }  
 }
 
-/* ----- Buton commander ----- */
-.button {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.btn{
-    display:block;
-    margin:auto !important;
-    box-sizing: border-box;
-    display: inline-block;
-    height: 50px;
-    padding: 10px 50px;
-    border-radius: 1.5rem;
-    border: none;
-    color: $white;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    background: linear-gradient(170deg, $secondaryColor, lighten($primaryColor, 5%));
-    @include shadowBox;
-    cursor: pointer;
-
-    a{
-        color: $white;
-    }
-
-    &:hover{
-        background: linear-gradient(170deg, lighten($secondaryColor, 8%), lighten($primaryColor, 8%));
-        @include shadowBox(20%);
-    }
-    @include breakpoints(tablet){
-        font-size: 1.3rem;
-      }
-}
-
-/* ----- Transition plats__Page ----- */
+/* ----- Menu Loader + prix ----- */
 .dishOptions{
     opacity: 0;
 
@@ -471,9 +329,45 @@ h1, h2, h3{
     }
 }
 
+/* ----- Buton commander ----- */
+.button {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.btn{
+    display:block;
+    margin:auto !important;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 60px;
+    padding: 3px 60px;
+    border-radius: 2rem;
+    border: none;
+    color: $white;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background: linear-gradient(170deg, $secondaryColor, lighten($primaryColor, 5%));
+    @include shadowBox;
+    cursor: pointer;
+    a{
+        color: $white;
+    }
+    &:hover{
+        background: linear-gradient(180deg, lighten($secondaryColor, 10%), lighten($primaryColor, 10%));
+      @include shadowBox(lighten($lightgreyColor, 20%));
+    }
+    @include breakpoints(tablet){
+        font-size: 1.3rem;
+      }
+}
+
 /* ----- Mise en page pied de page ----- */
 footer{
-    @include backgroundGrey (65%);
+    @include backgroundGrey (70%);
   
     h3, a, i {
       color: white;
@@ -486,14 +380,14 @@ footer{
       }
   
     li{
-      font-size:0.9rem;
+      font-size:1.1rem;
       font-weight: 300;
       margin-left: 15px;
       padding: 5px;
     }
 
     i {
-      font-size:0.8rem;
+      font-size: 0.9rem;
       width: 21px;
       margin: 0 5px 0 0;
     }

@@ -94,7 +94,7 @@ h1, h2, h3{
 
 /* ----- Mise en page en tete ----- */
 .homepageHeader{
-  height: 50px;
+  height: 70px;
   @include breakpoints(tablet){
     height: 120px;
   }
@@ -112,8 +112,8 @@ h1, h2, h3{
 
 /* ----- Mise en page ligne de localisation ----- */
 .location {
-  height: 50px;
-  @include backgroundGrey(8%);
+  height: 55px;
+  @include backgroundGrey(6%);
   color: darken($darkgreyColor, 50%);
   box-shadow: inset 0 5px 4px -2px darken($lightgreyColor, 16%);
 
@@ -217,7 +217,7 @@ h1, h2, h3{
 }
 
 .howToStep{
-  height: 85px;
+  height: 80px;
   width: 100%;
   align-items: center;
   margin-bottom: 30px;
@@ -275,7 +275,7 @@ h1, h2, h3{
   }
       
   &:hover{
-    background-color: lighten($primaryColor, 36%);
+    background-color: lighten($primaryColor, 30%);
     i{
       color: $primaryColor;
     }
@@ -285,7 +285,7 @@ h1, h2, h3{
 /* ----- Bloc restaurants ----- */
 .restaurants{
   padding: 60px 25px 50px 25px;
-  @include backgroundGrey (1%);
+  @include backgroundGrey (0%);
 
   h2{
   font-weight: 600;
@@ -300,7 +300,7 @@ h1, h2, h3{
 .restaurantsBox{
   flex-wrap: wrap;
   @include breakpoints(tablet){
-    display: row;
+    flex-direction: row;
     flex-wrap: wrap;
   }
 
@@ -407,8 +407,8 @@ h1, h2, h3{
   }
 }
 
-/* ----- Transition like ----- */
-#emptyHeart {
+/* ----- Transition like_restaurant1 ----- */
+#emptyHeart1, #emptyHeart2, #emptyHeart3, #emptyHeart4 {
   margin-top: 25px;
   margin-right: 20px;
   position: relative;
@@ -418,25 +418,25 @@ h1, h2, h3{
   display: block; 
 }
 
-#fullHeart {
+#fullHeart1, #fullHeart2, #fullHeart3, #fullHeart4 {
   margin-top: 25px;
   margin-right: 20px;
   height: 25px;
 }
 
 .Like {
-  #fullHeart {
+  #fullHeart1, #fullHeart2, #fullHeart3, #fullHeart4 {
     opacity: 0;
   }
-  #emptyHeart {
+  #emptyHeart1, #emptyHeart2, #emptyHeart3, #emptyHeart4 {
     opacity: 1;
   }
   &:hover{
-    #emptyHeart {
+    #emptyHeart1, #emptyHeart2, #emptyHeart3, #emptyHeart4 {
       display: none;
       opacity: 0;
     }
-    #fullHeart {
+    #fullHeart1, #fullHeart2, #fullHeart3, #fullHeart4 {
       display: block;
       opacity: 1;
       transition: opacity 2s ease-in; 
@@ -446,7 +446,7 @@ h1, h2, h3{
 
 /* ----- Mise en page pied de page ----- */
 footer{
-  @include backgroundGrey (65%);
+  @include backgroundGrey (70%);
 
   h3, a, i {
     color: white;
@@ -456,28 +456,31 @@ footer{
     font-family: 'Shrikhand', cursive;
     font-size:1.2rem;
     padding: 20px 20px 10px 20px;
-    @include breakpoints(tablet){
-      font-size: 1.6rem;
     }
-  }
 
   li{
-    font-size:0.9rem;
+    font-size:1.1rem;
     font-weight: 300;
     margin-left: 15px;
     padding: 5px;
-    @include breakpoints(tablet){
-      font-size: 1.3rem;
-    }
   }
 
   i {
-    font-size:0.8rem;
+    font-size: 0.9rem;
     width: 21px;
     margin: 0 5px 0 0;
-    @include breakpoints(tablet){
-      font-size: 1.1rem;
-    }
   }
+
+  @include breakpoints(tablet){
+      h3 {
+        font-size: 1.4rem;
+      }
+  
+      li {
+        font-size: 1.2rem;
+      }
+    }
 }
+
+
 
