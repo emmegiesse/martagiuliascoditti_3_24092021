@@ -75,7 +75,7 @@
   }
 }
 
-/* ----- Applicable à toute la page ----- */
+/* ----- Applicable à toute la page----- */
 body, ul {
   margin: 0;
   padding: 0;
@@ -125,7 +125,7 @@ h1, h2, h3 {
   }
 }
 
-/* ----- Mise en page ligne de localisation ----- */
+/* ----- Mise en page localisation ----- */
 .location {
   height: 55px;
   background-color: #e1e1e1;
